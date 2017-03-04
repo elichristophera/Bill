@@ -10,6 +10,10 @@
 <h1>0</h1>
 <h2>wildcats</h2>
 
+	<img src="http://www.fillmurray.com/460/300">
+
+
+
 	<div>
 		<button id="decrease"> - </button>
 		<button id="increase"> + </button>
@@ -17,20 +21,22 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+
 	<script type="text/javascript">
-	
-		var wildcat = 0;
+
+		var address="http://www.fillmurray.com/300/";
+		var picIndex = 300;
 
 		$('button').click(function(){
 
 			if($(this).attr('id')==='increase')
-			{wildcat = wildcat + 1;} 
+			{picIndex = picIndex + 1;} 
 		else 
-			{wildcat = wildcat - 1;}
+			{picIndex = picIndex - 1;}
 
-			$('h1').text(wildcat);
-			                                       
-			console.log(wildcat); 
+		var combine = address + picIndex;
+
+			$('img').attr("src", combine);
 			
 		});
 	
